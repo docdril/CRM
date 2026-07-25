@@ -220,7 +220,7 @@ export const SettingsView: React.FC = () => {
   };
 
   const handleSectionScheme = (scheme: typeof SECTION_SCHEMES[number]) => {
-    setActiveScheme(scheme.key);
+    setActiveScheme(scheme.key as any);
     setPageBg(scheme.pageBg);
     setCardBg(scheme.cardBg);
     setSidebarBg(scheme.sidebarBg);

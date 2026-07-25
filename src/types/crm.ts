@@ -54,7 +54,7 @@ export interface BrandCustomization {
   headerBg?: string;
   sidebarTextColor?: string;
   contentTextColor?: string;
-  sectionScheme?: 'default' | 'frosted' | 'minimal' | 'midnight' | 'warm' | 'neo';
+  sectionScheme?: 'default' | 'champagne' | 'frosted' | 'minimal' | 'midnight' | 'warm' | 'neo';
 }
 
 export interface AuthorizedRepresentative {
