@@ -37,7 +37,7 @@ export const DashboardView: React.FC = () => {
   const avgHealthScore = Math.round(companies.reduce((sum, c) => sum + c.relationshipScore, 0) / (companies.length || 1));
 
   return (
-    <div className="p-6 md:p-8 space-y-6 max-w-[1700px] mx-auto font-outfit">
+    <div className="p-4 sm:p-6 md:p-8 space-y-6 max-w-[1700px] mx-auto font-outfit">
       {/* Top Header Summary */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>

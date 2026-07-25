@@ -288,7 +288,7 @@ export const InvoicesView: React.FC = () => {
   };
 
   return (
-    <div className="p-6 md:p-8 space-y-6 max-w-[1700px] mx-auto font-outfit">
+    <div className="p-4 sm:p-6 md:p-8 space-y-6 max-w-[1700px] mx-auto font-outfit">
       {/* Strict Read Only Notice */}
       {isReadOnly && (
         <div className="p-3 bg-amber-50 border border-amber-200 text-amber-900 rounded-2xl flex items-center gap-2 text-xs font-bold font-outfit">

@@ -83,7 +83,7 @@ export const DealsKanban: React.FC = () => {
   };
 
   return (
-    <div className="p-6 space-y-6 max-w-[1700px] mx-auto h-[calc(100vh-4rem)] flex flex-col">
+    <div className="p-4 sm:p-6 space-y-4 max-w-[1700px] mx-auto h-[calc(100vh-4rem)] flex flex-col">
       {/* Read Only Governance Notice */}
       {isReadOnly && (
         <div className="p-3 bg-amber-50 border border-amber-200 text-amber-900 rounded-2xl flex items-center gap-2 text-xs font-bold font-outfit">
@@ -95,20 +95,20 @@ export const DealsKanban: React.FC = () => {
       {/* Top Filter Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 shrink-0">
         <div>
-          <h1 className="text-2xl font-black text-slate-900 tracking-tight font-display">Deals & Opportunities Pipeline</h1>
+          <h1 className="text-2xl font-black text-slate-900 tracking-tight font-display">Deals &amp; Opportunities Pipeline</h1>
           <p className="text-xs text-slate-500 font-outfit mt-0.5">
             Total Pipeline Value: <span className="font-bold text-slate-900">{formatCurrency(deals.reduce((a, b) => a + b.amount, 0), currencySymbol)}</span> across {deals.length} active opportunities
           </p>
         </div>
-        <div className="flex items-center gap-3 font-outfit">
-          <div className="relative">
+        <div className="flex flex-wrap items-center gap-3 font-outfit">
+          <div className="relative flex-1 sm:flex-initial">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
             <input
               type="text"
               placeholder="Filter deals by name or client..."
               value={filterQuery}
               onChange={(e) => setFilterQuery(e.target.value)}
-              className="pl-9 pr-4 py-2 bg-white rounded-xl border border-slate-200 text-xs font-medium focus:outline-none focus:border-brand-500 w-64 shadow-2xs"
+              className="pl-9 pr-4 py-2 bg-white rounded-xl border border-slate-200 text-xs font-medium focus:outline-none focus:border-brand-500 w-full sm:w-64 shadow-2xs"
             />
           </div>
           {!isReadOnly && (

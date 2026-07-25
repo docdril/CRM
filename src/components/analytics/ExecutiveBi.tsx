@@ -27,7 +27,7 @@ export const ExecutiveBi: React.FC = () => {
   const totalContractedValue = deals.reduce((a, b) => a + b.amount, 0);
 
   return (
-    <div className="p-6 md:p-8 space-y-6 max-w-[1700px] mx-auto font-outfit">
+    <div className="p-4 sm:p-6 md:p-8 space-y-6 max-w-[1700px] mx-auto font-outfit">
       {/* Top Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>

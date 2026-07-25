@@ -290,28 +290,28 @@ export const SettingsView: React.FC = () => {
   );
 
   return (
-    <div className="p-6 space-y-6 max-w-[1200px] mx-auto">
+    <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 max-w-[1200px] mx-auto">
       <div>
-        <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight font-display">Settings & Governance</h1>
-        <p className="text-xs text-slate-500 mt-0.5">Organisation profile, AI configuration, brand, billing & API management</p>
+        <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight font-display">Settings &amp; Governance</h1>
+        <p className="text-xs text-slate-500 mt-0.5">Organisation profile, AI configuration, brand, billing &amp; API management</p>
       </div>
 
-      <div className="flex gap-6">
+      <div className="flex flex-col md:flex-row gap-6">
         {/* Left: Tab Nav */}
-        <div className="w-52 shrink-0 space-y-1">
+        <div className="flex md:flex-col overflow-x-auto pb-2 md:pb-0 w-full md:w-52 shrink-0 gap-1.5 touch-pan-x">
           {TABS.map(tab => {
             const Icon = tab.icon;
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                className={`whitespace-nowrap flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-bold transition-all shrink-0 ${
                   activeTab === tab.id
                     ? 'bg-brand-600 text-white shadow-md shadow-brand-500/20'
-                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                    : 'bg-white border border-slate-200 md:bg-transparent md:border-none text-slate-600 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-4 h-4 shrink-0" />
                 {tab.label}
               </button>
             );

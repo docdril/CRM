@@ -69,11 +69,20 @@ export const Sidebar: React.FC = () => {
   };
 
   return (
-    <aside
-      className={`relative h-screen bg-white border-r border-slate-200/80 flex flex-col justify-between transition-all duration-300 z-30 select-none ${
-        isSidebarCollapsed ? 'w-20' : 'w-64'
-      }`}
-    >
+    <>
+      {/* Mobile Backdrop Overlay */}
+      {!isSidebarCollapsed && (
+        <div 
+          className="fixed inset-0 z-40 bg-slate-950/60 backdrop-blur-xs md:hidden"
+          onClick={() => toggleSidebar()} 
+        />
+      )}
+
+      <aside
+        className={`fixed md:relative inset-y-0 left-0 h-screen bg-white border-r border-slate-200/80 flex flex-col justify-between transition-all duration-300 z-50 md:z-30 select-none ${
+          isSidebarCollapsed ? '-translate-x-full md:translate-x-0 md:w-20' : 'translate-x-0 w-64'
+        }`}
+      >
       {/* Brand Header — Logo & Name vertically centered, pen in bottom-right of box */}
       <div className="relative">
         <div className="relative px-4 py-3.5 flex items-center gap-3 border-b border-slate-100">
@@ -168,7 +177,12 @@ export const Sidebar: React.FC = () => {
             return (
               <button
                 key={item.tab}
-                onClick={() => setActiveTab(item.tab)}
+                onClick={() => {
+                  setActiveTab(item.tab);
+                  if (typeof window !== 'undefined' && window.innerWidth < 768) {
+                    toggleSidebar();
+                  }
+                }}
                 className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all group font-display ${
                   isActive
                     ? 'bg-brand-600 text-white shadow-md shadow-brand-500/20'
@@ -230,5 +244,6 @@ export const Sidebar: React.FC = () => {
         </div>
       </div>
     </aside>
-  );
+  </>
+);
 };

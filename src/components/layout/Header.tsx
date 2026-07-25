@@ -1,13 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Search, Bell, Sparkles, Command, Settings2, RefreshCw, Palette, ChevronDown, LogOut, Eye } from 'lucide-react';
+import { Search, Bell, Sparkles, Command, Settings2, RefreshCw, Palette, ChevronDown, LogOut, Eye, Menu } from 'lucide-react';
 import { useCrmStore } from '../../store/useCrmStore';
 
 export const Header: React.FC = () => {
   const { 
     activeTab, 
     setActiveTab,
+    toggleSidebar,
     toggleCommandPalette, 
     toggleAiDrawer, 
     toggleNotificationDrawer, 
@@ -61,10 +62,17 @@ export const Header: React.FC = () => {
       )}
 
       {/* Main Top Header */}
-      <header className="h-16 px-6 glass-nav sticky top-0 z-20 flex items-center justify-between transition-all">
+      <header className="h-16 px-3.5 sm:px-6 glass-nav sticky top-0 z-20 flex items-center justify-between transition-all">
         {/* Breadcrumb Title & Workspace Indicator */}
-        <div className="flex items-center gap-3">
-          <h2 className="text-base font-extrabold text-slate-900 tracking-tight font-display">
+        <div className="flex items-center gap-2.5">
+          <button
+            onClick={() => toggleSidebar()}
+            className="p-1.5 rounded-xl bg-slate-100/80 border border-slate-200 text-slate-700 hover:bg-slate-200 transition-colors md:hidden shrink-0"
+            title="Toggle Navigation Menu"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+          <h2 className="text-base font-extrabold text-slate-900 tracking-tight font-display truncate max-w-[150px] sm:max-w-none">
             {getBreadcrumbTitle()}
           </h2>
           <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-semibold font-outfit">

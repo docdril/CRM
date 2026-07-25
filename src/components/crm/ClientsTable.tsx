@@ -83,7 +83,7 @@ export const ClientsTable: React.FC = () => {
   };
 
   return (
-    <div className="p-6 space-y-6 max-w-[1700px] mx-auto">
+    <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 max-w-[1700px] mx-auto">
       {/* Table Header Controls */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>

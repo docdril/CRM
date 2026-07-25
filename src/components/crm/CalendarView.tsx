@@ -9,7 +9,7 @@ export const CalendarView: React.FC = () => {
   const { calendarEvents } = useCrmStore();
 
   return (
-    <div className="p-6 space-y-6 max-w-[1700px] mx-auto">
+    <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 max-w-[1700px] mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">Calendar & Executive Meetings</h1>
